@@ -1,0 +1,26 @@
+{
+    "name": "Reference Chrome Build",
+    "version": "1.0",
+    "description": "Easier and more comprehensible .pdf and .txt file reading",
+    "permissions": ["storage"],
+    "background": {
+      "scripts": ["functions.js", "options.js", "server.js"],
+      "persistent": false
+    },
+    "page_action": {
+      "default_popup": "popup.ejs",
+      "default_icon": {
+        "16": "resources/img/logo.png",
+        "32": "resources/img/logo.png",
+        "48": "resources/img/logo.png",
+        "128": "resources/img/logo.png"
+      }
+    },
+    "icons": {
+      "16": "resources/img/logo.png",
+      "32": "resources/img/logo.png",
+      "48": "resources/img/logo.png",
+      "128": "resources/img/logo.png"
+    },
+    "manifest_version": 2
+  }

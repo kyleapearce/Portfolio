@@ -1,0 +1,159 @@
+<!-- popup for pdf/txt files -->
+<html>
+
+<head>
+  <title>Test Term Webpage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="functions.js"></script>
+</head>
+
+<body>
+  <!-- <button type="button" class="btn btn-seconary" id=show_terms onclick=show_terms()>Show terms</button> -->
+
+  <!-- <div id="topbar">
+    <button onclick="showinput()">Add definition</button>
+    <button onclick="showdef()">Show definition</button>
+    <button onclick="doThing()" id="inputStr">Show highlighted words</button>
+  </div> -->
+
+
+  <!-- <div id="inputdef">New term: "term here"<br>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="definition" id="definition_id"
+        placeholder="Type definition here...">
+    </div>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="link" id="link_id" placeholder="Type link here...">
+    </div>
+    <button
+      onclick="add_term(getSelectedText(), document.getElementById('definition_id').value, document.getElementById('link_id').value)">Submit
+      definition"
+    </button>
+  </div>
+  <div id="definitions">Word: <br>
+  </div> -->
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <ul id=term_list_id></ul>
+  </div>
+
+  <div id="main">
+    <!-- <button type="button" class="btn btn-seconary" id=show_terms onclick=show_terms()>Show terms</button> -->
+    <button class="openbtn" onclick="openNav()">☰ Show Terms</button>
+  </div>
+
+
+  <center>
+    <h2>
+      Test File
+    </h2>
+    <div class="container">
+      <span>
+        <p>This is some sample text: <br>
+          When I heard the learn’d astronomer, <br>
+          When the proofs, the figures, were ranged in columns before me, <br>
+          When I was shown the charts and diagrams, to add, divide, and measure them, <br>
+          When I sitting heard the astronomer where he lectured with much applause in the lecture-room, <br>
+          How soon unaccountable I became tired and sick, <br>
+          Till rising and gliding out I wander’d off by myself, <br>
+          In the mystical moist night-air, and from time to time, <br>
+          Look’d up in perfect silence at the stars. <br>
+          When I heard the learn’d astronomer, <br>
+          When the proofs, the figures, were ranged in columns before me, <br>
+          When I was shown the charts and diagrams, to add, divide, and measure them, <br>
+          When I sitting heard the astronomer where he lectured with much applause in the lecture-room, <br>
+          How soon unaccountable I became tired and sick, <br>
+          Till rising and gliding out I wander’d off by myself, <br>
+          In the mystical moist night-air, and from time to time, <br>
+          Look’d up in perfect silence at the stars. <br>
+          When I heard the learn’d astronomer, <br>
+          When the proofs, the figures, were ranged in columns before me, <br>
+          When I was shown the charts and diagrams, to add, divide, and measure them, <br>
+          When I sitting heard the astronomer where he lectured with much applause in the lecture-room, <br>
+          How soon unaccountable I became tired and sick, <br>
+          Till rising and gliding out I wander’d off by myself, <br>
+          In the mystical moist night-air, and from time to time, <br>
+          Look’d up in perfect silence at the stars. <br>
+          When I heard the learn’d astronomer, <br>
+          When the proofs, the figures, were ranged in columns before me, <br>
+          When I was shown the charts and diagrams, to add, divide, and measure them, <br>
+          When I sitting heard the astronomer where he lectured with much applause in the lecture-room, <br>
+          How soon unaccountable I became tired and sick, <br>
+          Till rising and gliding out I wander’d off by myself, <br>
+          In the mystical moist night-air, and from time to time, <br>
+          Look’d up in perfect silence at the stars. <br>
+          When I heard the learn’d astronomer, <br>
+          When the proofs, the figures, were ranged in columns before me, <br>
+          When I was shown the charts and diagrams, to add, divide, and measure them, <br>
+          When I sitting heard the astronomer where he lectured with much applause in the lecture-room, <br>
+          How soon unaccountable I became tired and sick, <br>
+          Till rising and gliding out I wander’d off by myself, <br>
+          In the mystical moist night-air, and from time to time, <br>
+          Look’d up in perfect silence at the stars. <br>
+        </p>
+      </span>
+
+    </div>
+  </center>
+
+  <div class="container">
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title" id="modal_title_id">Add term: !!!Missing!!!</h4>
+          </div>
+          <div class="modal-body">
+            <div class="col-sm-8">
+              <input type="text" class="form-control" name="definition" id="definition_id"
+                placeholder="Type definition here...">
+            </div>
+            <br><br>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" name="link" id="link_id" placeholder="Type link here...">
+            </div>
+            <!-- <span id="show">Hello</span> -->
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+            <button type="button" class="btn btn-primary"
+              onclick="add_term(document.getElementById('definition_id').value, document.getElementById('link_id').value);">Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="context-menu">
+    <i>
+      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"
+        onclick="addSelectedText()">Add
+        term
+      </button>
+    </i>
+    <i>
+      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"
+        onclick="editSelectedText()">Edit term
+      </button>
+    </i>
+    <i>
+      <button type="button" class="btn btn-info" onclick="highlightText(window.getSelectedText())">Highlight term
+      </button>
+    </i>
+    <i>
+      <button type="button" class="btn btn-info" onclick="UnhighlightText(window.getSelectedText())">Unhighlight term
+      </button>
+    </i>
+  </div>
+  </div>
+  <!-- <script>hidden()</script> -->
+</body>
+
+</html>
